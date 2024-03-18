@@ -1,0 +1,80 @@
+// contact list were users can add,search for,update and delete contact
+// Each contact could be an object(properties like name,email and phone number)
+// The contact could be stored in and array
+
+// ************************************//
+// 1.Objects - to represent contacts
+// 2.Array - to store contacts
+// 3.Function to complete the tasks
+
+
+
+// Defining an object template
+function makeContact(Name,Email,Number){
+    return{
+        Name,Email,Number
+    };
+}
+
+
+//MY contact list in form of a library
+let contactList = [
+    makeContact('Yusuf','yusuf@gmail','07111111111'),
+    makeContact('John','john@gmail','07222222222'),
+    makeContact('Peter','peter@gmail','07333333333'),
+    makeContact('Paul','Paul@gmail','074444444444')
+];
+
+//Function to add new contant to the contact list
+function addContactToList(Name,Email,Number){
+    const newContact = makeContact(Name,Email,Number);
+    contactList.push(newContact);
+}
+
+
+
+//Finding a Contact on the list by the name of the contact
+function lookForContact(Name){
+    return contactList.find(person => person.Name === Name);
+}
+
+
+
+//Finding a Contact on the list by the name of the contact
+function lookForContact(Email){
+    return contactList.find(person => person.Email === Email);
+}
+
+
+
+//Finding a Contact on the list by the name of the contact
+function lookForContact(Number){
+    return contactList.find(person => person.Number === Number);
+}
+
+
+
+// Deleting a contact by its name
+function deleteContactAttribute(Name){
+    const contactAttribute = contactList.findIndex(contactName => contactName === Name);
+    if(contactAttribute > -1){
+        contactList.splice(contactAttribute,1)
+        if (contactAttribute > -1) {
+            makeContact.splice(contactAttribute, 1);
+          };
+    }
+}
+
+console.log(contactList);
+let newcontact = addContactToList('Helen','Helen@gmail','0723456789')
+console.log(contactList)//adding a new contact
+// console.log(lookForContact("Paul"))//a look up a contact by Name
+// console.log(lookForContact("Peter@gmail"))//a look up a contact by Email
+// console.log(lookForContact('07111111111'))//a look up a contact by Number
+
+
+
+
+
+
+
